@@ -333,6 +333,7 @@ export default {
           return this.engineTypeList[i].engineType
         }
       }
+      return 'INTERFAC'
     }
   }
 }

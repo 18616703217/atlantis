@@ -88,14 +88,14 @@ export default {
   components: { LangSelect, SocialSign },
   data() {
     const validateUsername = (rule, value, callback) => {
-      if (!validUsername(value)) {
+      if (validUsername(value)) {
         callback(new Error('Please enter the correct user name'))
       } else {
         callback()
       }
     }
     const validatePassword = (rule, value, callback) => {
-      if (value.length < 6) {
+      if (value.length < 1) {
         callback(new Error('The password can not be less than 6 digits'))
       } else {
         callback()
@@ -103,8 +103,8 @@ export default {
     }
     return {
       loginForm: {
-        username: 'admin',
-        password: '111111'
+        username: '22@qq.com"',
+        password: '22'
       },
       loginRules: {
         username: [{ required: true, trigger: 'blur', validator: validateUsername }],

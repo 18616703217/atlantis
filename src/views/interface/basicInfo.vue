@@ -12,8 +12,8 @@
         label-width="110px"
         class="demo-ruleForm"
       >
-        <el-form-item label="测试类型" prop="engineTypeId" style="width: 100px">
-          <el-select
+        <!-- <el-form-item label="测试类型" prop="engineTypeId" style="width: 100px"> -->
+          <!-- <el-select
             v-model="formDataInfo.engineTypeId"
             :disabled="formDataInfo.import"
             clearable
@@ -28,8 +28,8 @@
               :label="item.description"
               :value="item.id"
             />
-          </el-select>
-        </el-form-item>
+          </el-select> -->
+        <!-- </el-form-item> -->
         <el-form-item v-if="showUrl" label="URL" prop="formatUrl">
           <el-input
             v-model="formDataInfo.formatUrl"
@@ -119,9 +119,9 @@ export default {
   data() {
     return {
       rule: {
-        engineTypeId: [
-          { required: true, message: '请选择测试类型', trigger: 'blur' }
-        ],
+        // engineTypeId: [
+        //   { required: true, message: '请选择测试类型', trigger: 'blur' }
+        // ],
         formatUrl: [
           { required: true, message: '请输入接口URI信息', trigger: 'blur' }
         ],
@@ -179,10 +179,10 @@ export default {
     }
   },
   methods: {
-    setEngId(type) {
-      const engine = _.find(this.engineTypes, { engineType: type }) || {}
-      this.formDataInfo.engineTypeId = engine.id
-    },
+    // setEngId(type) {
+    //   const engine = _.find(this.engineTypes, { engineType: type }) || {}
+    //   this.formDataInfo.engineTypeId = engine.id
+    // },
     getEngType(id) {
       for (let i = 0; i < this.engineTypes.length; i++) {
         if (this.engineTypes[i].id === id) {

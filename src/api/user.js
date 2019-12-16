@@ -1,18 +1,19 @@
 import request from '@/utils/request'
 
 export function login(data) {
+  console.log('test123', data)
   return request({
-    url: '/user/login',
-    method: 'post',
-    data
+    url: '/index/login',
+    method: 'get',
+    params: { username: '22@qq.com', password: '22' }
   })
 }
 
 export function getInfo(token) {
   return request({
-    url: '/user/info',
+    url: '/index/login',
     method: 'get',
-    params: { token }
+    params: { username: '22@qq.com', password: '22' }
   })
 }
 
