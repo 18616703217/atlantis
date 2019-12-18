@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function getList(params) {
   return request({
-    url: '/system/user/find.do',
+    url: '/user/getUserList',
     method: 'get',
     params
   })

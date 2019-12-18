@@ -32,34 +32,34 @@
 
       <el-table-column label="姓名" align="center">
         <template slot-scope="scope">
-          <span>{{ scope.row.display }}</span>
+          <span>{{ scope.row.name }}</span>
         </template>
       </el-table-column>
       <el-table-column label="域账号" align="center" >
         <template slot-scope="scope">
-          {{ scope.row.account }}
+          {{ scope.row.companyName }}
         </template>
       </el-table-column>
       <el-table-column label="邮箱">
         <template slot-scope="scope">
-          {{ scope.row.mail }}
+          {{ scope.row.email }}
         </template>
       </el-table-column>
 
       <el-table-column label="职位" >
-        <template slot-scope="scope">
-          {{ scope.row.title }}
+        <template >
+          测试
         </template>
       </el-table-column>
       <el-table-column label="部门">
-        <template slot-scope="scope">
-          {{ scope.row.department }}
+        <template>
+          质量部
         </template>
       </el-table-column>
       <el-table-column align="center" prop="created_at" label="发布时间">
-        <template slot-scope="scope">
+        <template >
           <i class="el-icon-time"/>
-          <span>{{ scope.row.createTimeDate }}</span>
+          <span> 2019-01-01</span>
         </template>
       </el-table-column>
       <el-table-column align="center" label="操作" width="250px" class-name="small-padding fixed-width">
@@ -115,8 +115,8 @@ export default {
     getList() {
       this.listLoading = true
       getList(this.listQuery).then(response => {
-        this.list = response.data.result
-        this.total = response.data.totalItems
+        console.log(response)
+        this.list = response.data
         this.listLoading = false
       })
     },
